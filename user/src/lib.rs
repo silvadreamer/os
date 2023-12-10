@@ -1,7 +1,6 @@
 #![no_std]
 #![feature(linkage)]
 #![feature(panic_info_message)]
-
 use syscall::*;
 
 pub fn write(fd: usize, buf: &[u8]) -> isize { sys_write(fd, buf) }
@@ -36,3 +35,4 @@ fn main() -> i32 {
     panic!("Cannot find main!");
 }
 
+pub fn yield_() -> isize { sys_yield() }
